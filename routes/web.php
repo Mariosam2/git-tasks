@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('/apartments', ApartmentsController::class)->name('apartments');
+    Route::resource('/apartments', ApartmentsController::class);
 });
 require __DIR__ . '/auth.php';
