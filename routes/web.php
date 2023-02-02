@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApartmentsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 //TODO: creare DashboardController, Apartments Controller e importarli
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('apartments', ApartmentsController::class);
 
 Route::get('/', function () {
     return view('welcome');
