@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('address', 50);
             $table->date('check_in');
             $table->date('check_out');
-            $table->smallInteger('price9999');
+            $table->smallInteger('price');
         });
     }
 
