@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+//TODO: creare DashboardController, Apartments Controller e importarli
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
+Route::middleware('auth', 'verified')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/apartments', ApartmentsController::class);
 });
+
 require __DIR__ . '/auth.php';
